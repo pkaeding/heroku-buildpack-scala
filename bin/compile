@@ -29,8 +29,6 @@ echo "done"
 # ensure node is on the path
 PATH=$PATH:$BUILD_DIR/node-v$node_version-linux-x64/bin
 
-ls -la $BUILD_DIR
-
 curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack-common.tar.gz | tar xz
 . bin/util
 . bin/java
