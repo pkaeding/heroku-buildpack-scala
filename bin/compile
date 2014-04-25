@@ -28,7 +28,7 @@ curl $node_url -s -o - | tar xzf - -C $BUILD_DIR
 # ensure node is on the path
 PATH=$PATH:$BUILD_DIR
 
-ls -la $APP_BUILD_DIR
+ls -la $BUILD_DIR
 
 curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack-common.tar.gz | tar xz
 . bin/util
