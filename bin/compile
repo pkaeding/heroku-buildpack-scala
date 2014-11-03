@@ -133,6 +133,9 @@ if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   exit 1
 fi
 
+echo "-----> Downloading Maxmind database"
+curl http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz|gunzip > $BUILD_DIR/conf/GeoLite2-City.mmdb
+
 PROFILE_PATH="$BUILD_DIR/.profile.d/scala.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="/app/.jdk/bin:$PATH"' >> $PROFILE_PATH
