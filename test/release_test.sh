@@ -7,12 +7,9 @@ testRelease()
   expected_release_output=`cat <<EOF
 ---
 config_vars:
-  PATH: .jdk/bin:.sbt_home/bin:/usr/local/bin:/usr/bin:/bin
-  JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
-  SBT_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
-  REPO: /app/.sbt_home/.ivy2/cache
+  JAVA_OPTS: -Xss512k -XX:+UseCompressedOops
 addons:
-  heroku-postgresql:dev
+  heroku-postgresql:hobby-dev
 
 EOF`
 
@@ -30,12 +27,9 @@ testPlay20Release()
   expected_release_output=`cat <<EOF
 ---
 config_vars:
-  PATH: .jdk/bin:.sbt_home/bin:/usr/local/bin:/usr/bin:/bin
-  JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
-  SBT_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
-  REPO: /app/.sbt_home/.ivy2/cache
+  JAVA_OPTS: -Xss512k -XX:+UseCompressedOops
 addons:
-  heroku-postgresql:dev
+  heroku-postgresql:hobby-dev
 
 default_process_types:
   web: target/start -Dhttp.port=\\$PORT \\$JAVA_OPTS
